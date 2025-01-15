@@ -26,7 +26,8 @@ function GetBP() {
             return(
               <>
                 <div className="bp-list" key={bp.id}>
-                  <p>{bp.timing}</p>
+                  <p>{bp.created_at}</p>
+                  <h3>{bp.timing}</h3>
                   <h2>Systolic: {bp.systolic}</h2>
                   <h2>Diastolic: {bp.diastolic}</h2>
                 </div>

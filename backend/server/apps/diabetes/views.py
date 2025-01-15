@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from . models import Diabetes
 from django.http import JsonResponse
+from django.middleware.csrf import get_token
 from django.views.decorators.csrf import csrf_exempt
 import json
 # Create your views here.
+
+def csrf(request):
+  return JsonResponse({"csrfToken" : get_token(request)})
 
 @csrf_exempt
 def add_sugar(request):

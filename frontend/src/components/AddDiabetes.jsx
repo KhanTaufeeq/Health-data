@@ -1,16 +1,41 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
 function AddDiabetes() {
   const [fasting, setFasting] = useState(0)
   const [random, setRandom] = useState(0)
+  const [csrfToken, setCsrfToken] = useState('');
   const navigate = useNavigate();
+
+  const getCSRFToken = () => {
+    axios.get('http://127.0.0.1:8000/diabetes/csrf/', {
+      withCredentials: true,
+    })
+    .then((response) => {
+      console.log(response.data.csrfToken);
+      setCsrfToken(response.data.csrfToken);
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
+  useEffect(() => {
+    getCSRFToken();
+  }, [])
 
   const addDiabetesData = () => {
     axios.post('http://127.0.0.1:8000/diabetes/add/', {
       'fasting_sugar': fasting,
       'random_sugar' : random
+    },
+    {
+      headers : {
+        'Content-Type': 'application/json',
+        'X-CSRFToken' : csrfToken,
+      },
+      withCredentials: true,
     })
     .then((res) => {
       console.log(res.data);
