@@ -20,15 +20,18 @@ function GetDiabetes() {
   return (
     <>
       <div className="show-diabetes-div">
-        <h1>Diabetes</h1>
+        <h1>Glucose Level</h1>
         {
           listDiabetes.map(diabetes => {
             return(
-              <div className="diabetes-list">
-                <p>{diabetes.created_at}</p>
-                <h2>Fasting: {diabetes.fasting_sugar}</h2>
-                <h2>Random: {diabetes.random_sugar}</h2>
-              </div>
+              <>
+                <div className="diabetes-list">
+                  <p>{diabetes.created_at}</p>
+                  <h2>Fasting: {diabetes.fasting_sugar}</h2>
+                  <h2>Random: {diabetes.random_sugar}</h2>
+                </div>
+                <hr />
+              </>
             )
           })
         }

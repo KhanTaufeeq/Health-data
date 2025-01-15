@@ -29,11 +29,11 @@ function AddDiabetes() {
         <div className="diabetes-input">
           <div className="fasting-sugar-div">
             <label htmlFor="fasting-sugar">Fasting: </label>
-            <input type="number" name="fasting-sugar" id="diabetes" onChange={(event) => setFasting(event.target.value)}/>
+            <input type="number" name="fasting-sugar" id="diabetes" onChange={(event) => setFasting(event.target.value)} placeholder='enter fasting here...'/>
           </div>
           <div className="random-sugar-div">
             <label htmlFor="random-sugar">Random: </label>
-            <input type="number" name="random-sugar" id="random-sugar" onChange={(event) => setRandom(event.target.value)}/>
+            <input type="number" name="random-sugar" id="random-sugar" onChange={(event) => setRandom(event.target.value)} placeholder='enter random here...'/>
           </div>
           <button type="submit" onClick={addDiabetesData}>Submit</button>
         </div>

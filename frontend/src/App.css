@@ -40,3 +40,50 @@
 .read-the-docs {
   color: #888;
 }
+
+#main-heading{
+  font-size: clamp(30px, 4vw, 60px);
+  margin-bottom: 50px;
+}
+.header-add-div{
+  margin-bottom: 20px;
+}
+.header-add-div, .header-get-div{
+  display: flex;
+  justify-content: space-around;
+}
+.diabetes-div h1{
+  font-size: clamp(30px, 4vw, 60px);
+  margin-bottom: 50px;
+}
+.random-sugar-div{
+  margin: 30px 0;
+}
+.diabetes-input input{
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.bp-div h1{
+  font-size: clamp(30px, 4vw, 60px);
+  margin-bottom: 50px;
+}
+.bp-div input{
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.diastolic-bp-div{
+  margin: 30px 0;
+}
+.bp-div select{
+  border: none;
+  padding: 0.5rem;
+  margin: 30px 0;
+}
+.show-bp-div h1{
+  font-size: clamp(30px, 4vw, 60px);
+}
+.show-diabetes-div h1{
+  font-size: clamp(30px, 4vw, 60px);
+}

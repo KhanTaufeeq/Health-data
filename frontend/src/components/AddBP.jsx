@@ -26,23 +26,24 @@ function AddBP() {
 
   return (
     <>
-      <h1>Today's BP data</h1>
       <div className="bp-div">
+        <h1>Today's BP data</h1>
         <div className="timing-div">
+          <label htmlFor="timing">Timing: </label>
           <select value={timing} onChange={(event) => setTiming(event.target.value)}>
             <option value="">Select an option</option>
             <option value="Morning">Morning</option>
             <option value="Afternoon">Afternoon</option>
             <option value="Evening">Evening</option>
-      </select>
+          </select>
         </div>
         <div className="systolic-bp-div">
-          <label for="systolic">Systolic</label>
-          <input type="number" name="systolic" id="systolic" onChange={(event) => setSystolic(event.target.value)}/>
+          <label for="systolic">Systolic: </label>
+          <input type="number" name="systolic" id="systolic" onChange={(event) => setSystolic(event.target.value)} placeholder='enter systolic here...'/>
         </div>
         <div className="diastolic-bp-div">
-          <label htmlFor="diastolic">Diastolic</label>
-          <input type="number" name="diastolic" id="diastolic" onChange={(event) => setDiastolic(event.target.value)}/>
+          <label htmlFor="diastolic">Diastolic: </label>
+          <input type="number" name="diastolic" id="diastolic" onChange={(event) => setDiastolic(event.target.value)} placeholder='enter diastolic here...'/>
         </div>
       </div>
       <button type="submit" onClick={addBPData}>Submit</button>
